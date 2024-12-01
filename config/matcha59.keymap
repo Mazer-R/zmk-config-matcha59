@@ -8,58 +8,88 @@
 #define RAISE 2
 #define BOTH 3
 
-/ {    
-  conditional_layers {
+/ {
+    conditional_layers {
         compatible = "zmk,conditional-layers";
+
         tri_layer {
             if-layers = <1 2>;
             then-layer = <3>;
         };
     };
 };
-/ {    
 
-  keymap {
+/ {
+    behaviors {
+        Lower_Layer: Lower_Layer {
+            compatible = "zmk,behavior-tap-dance";
+            label = "LOWER_LAYER";
+            #binding-cells = <0>;
+            bindings = <&mo 1>, <&tog 1>;
+        };
+
+        comma_to_open_bracket: comma_to_open_bracket {
+            compatible = "zmk,behavior-tap-dance";
+            label = "COMMA_TO_OPEN_BRACKET";
+            #binding-cells = <0>;
+            bindings = <&kp COMMA>, <&kp LEFT_BRACKET>;
+        };
+
+        dot_to_close_bracket: dot_to_close_bracket {
+            compatible = "zmk,behavior-tap-dance";
+            label = "DOT_TO_CLOSE_BRACKET";
+            #binding-cells = <0>;
+            bindings = <&kp DOT>, <&kp RIGHT_BRACKET>;
+        };
+    };
+
+    keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             bindings = <
-    &kp GRAVE   &kp 1 &kp 2 &kp 3 &kp 4 &kp 5 &kp 6 &kp 7  &kp 8 &kp 9   &kp 0    &kp MINUS
-    &kp TAB   &kp Q &kp W &kp E &kp R &kp T &kp Y &kp U  &kp I &kp O   &kp P    &kp EQUAL
-    &kp ESC   &kp A &kp S &kp D &kp F &kp G &kp H &kp J  &kp K &kp L   &kp SEMICOLON &kp SQT
-    &kp LSHIFT   &kp Z &kp X &kp C &kp V &kp B &kp N &kp M  &kp COMMA &kp PERIOD   &kp SLASH    &kp RSHIFT
-    &kp LEFT_CONTROL &kp LEFT_ALT &kp LEFT_GUI &kp E &kp R &kp C_MUTE &kp Y &kp U  &kp I &kp O   &kp P   
+&kp GRAVE         &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5          &kp NUMBER_6  &kp N7     &kp N8                  &kp N9                 &kp N0         &kp MINUS
+&kp TAB           &kp Q         &kp W         &kp E         &kp R         &kp T           &kp Y         &kp U      &kp I                   &kp O                  &kp P          &kp EQUAL
+&kp ESC           &kp A         &kp S         &kp D         &kp F         &kp G           &kp H         &kp J      &kp K                   &kp L                  &kp SEMICOLON  &kp SQT
+&kp LSHIFT        &kp Z         &kp X         &kp C         &kp V         &kp B           &kp N         &kp M      &comma_to_open_bracket  &dot_to_close_bracket  &kp SLASH      &kp RSHIFT
+&kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_GUI  &Lower_Layer  &kp SPACE             &tog 2                &kp SPACE  &Lower_Layer            &kp I                  &kp DELETE     &kp P
             >;
-             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
-        };
-                lower_layer {
-            bindings = <
-    &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans     
-    &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans     
-    &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans     
-    &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans     
-    &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans     
 
-            >;
+            sensor-bindings = <&inc_dec_kp RIGHT LEFT_ARROW>;
         };
-                 raise_layer {
-             bindings = <
-     &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans     
-    &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans     
-    &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans     
-    &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans     
-    &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans     
-            >;
-        };
-               adjust_layer {
-            bindings = <
-    &kp 4   &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_SEL 5 &kp Y &kp U  &kp I &kp O   &kp P    &kp BSLH
-    &kp 1   &kp Q &kp W &kp E &kp R &kp T &kp Y &kp U  &kp I &kp O   &kp P    &kp BSLH
-    &bootloader   &kp A &kp S &kp D &kp F &kp G &kp H &kp J  &kp K &kp L   &kp 3 &kp 4
-    &kp 1   &kp Q &kp W &kp E &kp R &kp T &kp Y &kp U  &kp I &kp O   &kp P    &kp BSLH
-    &kp 1   &kp Q &kp W &kp E &kp R &kp T &kp Y &kp U  &kp I &kp O   &out OUT_TOG    
 
+        lower_layer {
+            bindings = <
+&kp ESC  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5          &kp F6  &kp F7    &kp F8            &kp F9             &kp F10        &kp F11
+&trans   &trans  &trans  &trans  &trans  &trans          &trans  &trans    &kp UP_ARROW      &trans             &trans         &kp F12
+&trans   &trans  &trans  &trans  &trans  &trans          &trans  &kp LEFT  &kp DOWN_ARROW    &kp RIGHT          &trans         &trans
+&trans   &trans  &trans  &trans  &trans  &trans          &trans  &trans    &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSLASH  &trans
+&trans   &trans  &trans  &trans  &trans          &tog 3          &trans    &trans            &trans             &trans         &trans
+            >;
+
+            sensor-bindings = <&inc_dec_kp UP_ARROW DOWN_ARROW>;
+        };
+
+        raise_layer {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans      &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans      &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans      &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans          &trans  &kp K_MUTE  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans          &tog 2          &trans      &trans  &trans  &trans  &trans
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
+        };
+
+        adjust_layer {
+            bindings = <
+&trans       &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_SEL 5          &kp Y  &kp U  &kp I  &kp O  &kp P   &kp BSLH
+&trans       &kp Q         &kp W         &kp E         &kp R         &kp T                 &kp Y  &kp U  &kp I  &kp O  &kp P   &kp BSLH
+&bootloader  &kp A         &kp S         &kp D         &kp F         &kp G                 &kp H  &kp J  &kp K  &kp L  &trans  &trans
+&trans       &kp Q         &kp W         &kp E         &kp R         &kp T                 &kp Y  &kp U  &kp I  &kp O  &kp P   &kp BSLH
+&trans       &kp Q         &kp W         &kp E         &kp R                       &tog 3         &kp Y  &kp U  &kp I  &kp O   &out OUT_TOG
             >;
         };
-   };
+    };
 };
