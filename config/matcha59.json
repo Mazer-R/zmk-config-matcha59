@@ -77,7 +77,8 @@
       "name": "encoder_test",
       "identifier": "encoder_test",
       "compatible": "alps,ec11",
-      "enabled": false
+      "enabled": true
+      
     }
   ]
 }
