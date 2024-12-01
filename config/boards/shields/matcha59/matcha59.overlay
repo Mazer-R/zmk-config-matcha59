@@ -12,6 +12,13 @@
         b-gpios = <&gpio1 01 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         steps = <80>;
         status = "disabled";
+
+        
+        sensors: sensors {
+            compatible = "zmk,keymap-sensors";
+            sensors = <&encoder_1>;
+            triggers-per-rotation = <20>;
+    };
     };
 
   default_kscan: kscan{
