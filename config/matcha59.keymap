@@ -71,7 +71,7 @@
 &trans        &trans  &trans  &trans  &trans         &trans          &trans  &trans     &kp UP_ARROW      &trans             &trans         &kp F12
 &trans        &trans  &trans  &trans  &trans         &trans          &trans  &kp LEFT   &kp DOWN_ARROW    &kp RIGHT          &trans         &trans
 &kp CAPSLOCK  &trans  &trans  &trans  &trans         &trans          &trans  &trans     &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSLASH  &trans
-&trans        &trans  &trans  &trans  &kp BACKSPACE          &tog 3          &kp ENTER  &trans            &trans             &kp DELETE     &trans
+&trans        &trans  &trans  &trans  &kp BACKSPACE          &tog 3          &kp ENTER  &trans            &trans             &kp DELETE     &kp W
             >;
 
             sensor-bindings = <&inc_dec_kp UP_ARROW DOWN_ARROW>;
@@ -94,7 +94,7 @@
 &trans       &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_SEL 5          &kp Y  &kp U  &kp I  &kp O  &kp P   &kp BSLH
 &trans       &kp Q         &kp W         &kp E         &kp R         &kp T                 &kp Y  &kp U  &kp I  &kp O  &kp P   &kp BSLH
 &bootloader  &kp A         &kp S         &kp D         &kp F         &kp G                 &kp H  &kp J  &kp K  &kp L  &trans  &trans
-&trans       &kp Q         &kp W         &kp E         &kp R         &kp T                 &kp Y  &kp U  &kp I  &kp O  &kp P   &kp BSLH
+&trans       &kp Q         &kp W         &kp E         &kp R         &out OUT_TOG          &kp Y  &kp U  &kp I  &kp O  &kp P   &kp BSLH
 &trans       &kp Q         &kp W         &kp E         &kp R                       &tog 3         &kp Y  &kp U  &kp I  &kp O   &out OUT_TOG
             >;
         };
