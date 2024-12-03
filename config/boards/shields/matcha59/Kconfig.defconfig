@@ -3,4 +3,10 @@ if SHIELD_MATCHA59
 config ZMK_KEYBOARD_NAME
 	default "Matcha59"
 
+config USB_DEVICE_PRODUCT
+	default ZMK_KEYBOARD_NAME
+
+config BT_DEVICE_NAME
+	default ZMK_KEYBOARD_NAME
+
 endif
