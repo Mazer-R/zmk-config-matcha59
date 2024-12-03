@@ -21,20 +21,6 @@
             bindings = <&mo 1>, <&tog 1>;
         };
 
-        comma_to_open_bracket: comma_to_open_bracket {
-            compatible = "zmk,behavior-tap-dance";
-            label = "COMMA_TO_OPEN_BRACKET";
-            #binding-cells = <0>;
-            bindings = <&kp COMMA>, <&kp LEFT_BRACKET>;
-        };
-
-        dot_to_close_bracket: dot_to_close_bracket {
-            compatible = "zmk,behavior-tap-dance";
-            label = "DOT_TO_CLOSE_BRACKET";
-            #binding-cells = <0>;
-            bindings = <&kp DOT>, <&kp RIGHT_BRACKET>;
-        };
-
         top_layer: top_layer {
             compatible = "zmk,behavior-tap-dance";
             label = "TOP_LAYER";
@@ -55,6 +41,13 @@
             #binding-cells = <0>;
             bindings = <&kp LEFT_SHIFT>, <&kp CAPS>;
         };
+
+        Space_to_backspace: Space_to_backspace {
+            compatible = "zmk,behavior-tap-dance";
+            label = "SPACE_TO_BACKSPACE";
+            #binding-cells = <0>;
+            bindings = <&kp SPACE>, <&kp BACKSPACE>;
+        };
     };
 
     keymap {
@@ -62,11 +55,11 @@
 
         default_layer {
             bindings = <
-&Grave_to_esc     &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5              &kp NUMBER_6  &kp N7         &kp N8                  &kp N9                 &kp N0         &kp MINUS
-&kp TAB           &kp Q         &kp W         &kp E         &kp R         &kp T               &kp Y         &kp U          &kp I                   &kp O                  &kp P          &kp EQUAL
-&kp ESC           &kp A         &kp S         &kp D         &kp F         &kp G               &kp H         &kp J          &kp K                   &kp L                  &kp SEMICOLON  &kp SQT
-&shift_to_caps    &kp Z         &kp X         &kp C         &kp V         &kp B               &kp N         &kp M          &comma_to_open_bracket  &dot_to_close_bracket  &kp SLASH      &shift_to_caps
-&kp LEFT_CONTROL  &kp LEFT_ALT  &Lower_Layer  &kp LEFT_GUI  &kp SPACE             &kp K_MUTE  &kp SPACE     &kp RIGHT_GUI  &Lower_Layer            &kp BACKSPACE          &top_layer
+&Grave_to_esc     &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4         &kp N5              &kp NUMBER_6     &kp N7         &kp N8        &kp N9         &kp N0         &kp MINUS
+&kp TAB           &kp Q         &kp W         &kp E         &kp R                &kp T               &kp Y            &kp U          &kp I         &kp O          &kp P          &kp EQUAL
+&lt 1 ESCAPE      &kp A         &kp S         &kp D         &kp F                &kp G               &kp H            &kp J          &kp K         &kp L          &kp SEMICOLON  &kp SQT
+&shift_to_caps    &kp Z         &kp X         &kp C         &kp V                &kp B               &kp N            &kp M          &kp COMMA     &kp PERIOD     &kp SLASH      &shift_to_caps
+&kp LEFT_CONTROL  &kp LEFT_ALT  &Lower_Layer  &kp LEFT_GUI  &Space_to_backspace          &kp K_MUTE  &mt ENTER SPACE  &kp RIGHT_GUI  &Lower_Layer  &kp BACKSPACE  &top_layer
             >;
 
             sensor-bindings = <&inc_dec_kp RIGHT LEFT_ARROW>;
