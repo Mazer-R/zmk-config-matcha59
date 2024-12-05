@@ -51,11 +51,11 @@
 
         default_layer {
             bindings = <
-&Grave_to_esc     &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4         &kp N5              &kp NUMBER_6     &kp N7         &kp N8        &kp N9         &kp N0         &kp MINUS
-&kp TAB           &kp Q         &kp W         &kp E         &kp R                &kp T               &kp Y            &kp U          &kp I         &kp O          &kp P          &kp EQUAL
-&lt 1 ESCAPE      &kp A         &kp S         &kp D         &kp F                &kp G               &kp H            &kp J          &kp K         &kp L          &kp SEMICOLON  &kp SQT
-&kp LSHIFT        &kp Z         &kp X         &kp C         &kp V                &kp B               &kp N            &kp M          &kp COMMA     &kp PERIOD     &kp SLASH      &kp RSHFT
-&kp LEFT_CONTROL  &kp LEFT_ALT  &Lower_Layer  &kp LEFT_GUI  &Space_to_backspace          &kp K_MUTE  &mt ENTER SPACE  &kp RIGHT_GUI  &Lower_Layer  &kp BACKSPACE  &top_layer
+&Grave_to_esc     &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3            &kp NUMBER_4  &kp N5  &kp NUMBER_6  &kp N7           &kp N8               &kp N9        &kp N0         &kp MINUS
+&kp TAB           &kp Q         &kp W         &kp E                   &kp R         &kp T   &kp Y         &kp U            &kp I                &kp O         &kp P          &kp EQUAL
+&lt 1 ESCAPE      &kp A         &kp S         &kp D                   &kp F         &kp G   &kp H         &kp J            &kp K                &kp L         &kp SEMICOLON  &kp SQT
+&kp LSHIFT        &kp Z         &kp X         &kp C                   &kp V         &kp B   &kp N         &kp M            &kp COMMA            &kp PERIOD    &kp SLASH      &kp RSHFT
+&kp LEFT_CONTROL  &kp LEFT_ALT  &Lower_Layer  &mt LEFT_GUI BACKSPACE  &kp SPACE             &kp K_MUTE    &mt ENTER SPACE  &mt RIGHT_GUI ENTER  &Lower_Layer  &kp BACKSPACE  &top_layer
             >;
 
             sensor-bindings = <&inc_dec_kp RIGHT LEFT_ARROW>;
@@ -63,11 +63,11 @@
 
         lower_layer {
             bindings = <
-&trans    &kp F1  &kp F2  &kp F3  &kp F4         &kp F5          &kp F6     &kp F7    &kp F8            &kp F9             &kp F10        &kp F11
-&trans    &trans  &trans  &trans  &trans         &trans          &trans     &trans    &kp UP_ARROW      &trans             &trans         &kp F12
-&trans    &trans  &trans  &trans  &trans         &trans          &trans     &kp LEFT  &kp DOWN_ARROW    &kp RIGHT          &trans         &trans
-&kp CAPS  &trans  &trans  &trans  &trans         &trans          &trans     &trans    &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSLASH  &trans
-&trans    &trans  &trans  &trans  &kp BACKSPACE          &tog 3  &kp ENTER  &trans    &trans            &kp DELETE         &trans
+&trans    &kp F1  &kp F2  &kp F3  &kp F4         &kp F5  &kp F6  &kp F7     &kp F8            &kp F9             &kp F10        &kp F11
+&trans    &trans  &trans  &trans  &trans         &trans  &trans  &trans     &kp UP_ARROW      &trans             &trans         &kp F12
+&trans    &trans  &trans  &trans  &trans         &trans  &trans  &kp LEFT   &kp DOWN_ARROW    &kp RIGHT          &trans         &trans
+&kp CAPS  &trans  &trans  &trans  &trans         &trans  &trans  &trans     &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSLASH  &trans
+&trans    &trans  &trans  &trans  &kp BACKSPACE          &tog 3  &kp ENTER  &trans            &trans             &kp DELETE     &trans
             >;
 
             sensor-bindings = <&inc_dec_kp UP_ARROW DOWN_ARROW>;
@@ -75,11 +75,11 @@
 
         raise_layer {
             bindings = <
-&trans  &trans  &trans  &trans   &trans  &trans          &trans      &trans      &trans  &trans  &trans            &trans
-&trans  &trans  &trans  &kp END  &trans  &trans          &trans      &trans      &trans  &trans  &kp C_PLAY_PAUSE  &trans
-&trans  &trans  &trans  &trans   &trans  &trans          &kp HOME    &trans      &trans  &trans  &trans            &trans
-&trans  &trans  &trans  &trans   &trans  &trans          &kp C_NEXT  &kp K_MUTE  &trans  &trans  &trans            &trans
-&trans  &trans  &trans  &trans   &trans          &tog 2  &trans      &trans      &trans  &trans  &trans
+&trans  &trans  &trans  &trans   &trans  &trans  &trans      &trans      &trans  &trans  &trans            &trans
+&trans  &trans  &trans  &kp END  &trans  &trans  &trans      &trans      &trans  &trans  &kp C_PLAY_PAUSE  &trans
+&trans  &trans  &trans  &trans   &trans  &trans  &kp HOME    &trans      &trans  &trans  &trans            &trans
+&trans  &trans  &trans  &trans   &trans  &trans  &kp C_NEXT  &kp K_MUTE  &trans  &trans  &trans            &trans
+&trans  &trans  &trans  &trans   &trans          &tog 2      &trans      &trans  &trans  &trans            &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
@@ -87,11 +87,11 @@
 
         adjust_layer {
             bindings = <
-&trans       &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4          &kp Y  &kp U  &kp I         &kp O         &kp P   &kp BSLH
-&trans       &kp Q         &kp W         &kp E         &kp R         &kp T                 &kp Y  &kp U  &kp I         &kp O         &kp P   &kp BSLH
-&bootloader  &kp A         &kp S         &kp D         &kp F         &kp G                 &kp H  &kp J  &out OUT_USB  &out OUT_BLE  &trans  &trans
-&trans       &kp Q         &kp W         &bt BT_CLR    &kp R         &out OUT_TOG          &kp Y  &kp U  &kp I         &kp O         &kp P   &kp BSLH
-&trans       &kp Q         &kp W         &kp E         &kp R                       &tog 3  &kp Y  &kp U  &kp I         &kp O         &trans
+&trans       &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &kp Y   &kp U  &kp I         &kp O         &kp P   &kp BSLH
+&trans       &kp Q         &kp W         &kp E         &kp R         &kp T         &kp Y   &kp U  &kp I         &kp O         &kp P   &kp BSLH
+&bootloader  &kp A         &kp S         &kp D         &kp F         &kp G         &kp H   &kp J  &out OUT_USB  &out OUT_BLE  &trans  &trans
+&trans       &kp Q         &kp W         &bt BT_CLR    &kp R         &out OUT_TOG  &kp Y   &kp U  &kp I         &kp O         &kp P   &kp BSLH
+&trans       &kp Q         &kp W         &kp E         &kp R                       &tog 3  &kp Y  &kp U         &kp I         &kp O   &trans
             >;
         };
     };
