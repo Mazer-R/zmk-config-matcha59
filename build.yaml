@@ -20,5 +20,4 @@
 ---
 include:
   - board: nice_nano_v2
-    shield: matcha59 
-    snippet: zmk-usb-logging
+    shield: matcha59
