@@ -34,7 +34,7 @@
 
     col-gpios = <&gpio0 22 GPIO_ACTIVE_HIGH>,
                 <&gpio0 24 GPIO_ACTIVE_HIGH>,
-               <&gpio1 00GPIO_ACTIVE_HIGH>,
+               <&gpio1 00 GPIO_ACTIVE_HIGH>,
             <&gpio0 11 GPIO_ACTIVE_HIGH>,
             <&gpio1 04 GPIO_ACTIVE_HIGH>,
             <&gpio1 06 GPIO_ACTIVE_HIGH>,
