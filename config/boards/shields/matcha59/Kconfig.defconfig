@@ -32,30 +32,4 @@ config SSD1306_REVERSE_MODE
     depends on SHIELD_MATCHA59  # ← También aquí para mantener consistencia
 
 endif # ZMK_DISPLAY
-
-if LVGL
-
-config LV_Z_VDB_SIZE
-    int "LVGL Virtual Display Buffer Size"
-    default 64
-    depends on SHIELD_MATCHA59  # ← Para asegurar que LVGL config se aplique solo con matcha59
-
-config LV_Z_DPI
-    int "LVGL Display DPI"
-    default 148
-    depends on SHIELD_MATCHA59  # ← Añadido aquí también
-
-config LV_Z_BITS_PER_PIXEL
-    int "Bits per Pixel"
-    default 1
-    depends on SHIELD_MATCHA59
-
-choice LV_COLOR_DEPTH
-    prompt "LVGL Color Depth"
-    default LV_COLOR_DEPTH_1
-    depends on SHIELD_MATCHA59  # ← Asegura que la selección de color depth esté limitada al shield matcha59
-endchoice
-
-endif # LVGL
-
 endif
