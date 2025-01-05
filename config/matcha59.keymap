@@ -17,32 +17,11 @@
             bindings = <&mo 1>, <&tog 1>;
         };
 
-        top_layer: top_layer {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TOP_LAYER";
-            #binding-cells = <0>;
-            bindings = <&mo 2>, <&tog 2>;
-        };
-
         Grave_to_esc: Grave_to_esc {
             compatible = "zmk,behavior-tap-dance";
             label = "GRAVE_TO_ESC";
             #binding-cells = <0>;
             bindings = <&kp GRAVE>, <&kp ESCAPE>;
-        };
-
-        shift_to_caps: shift_to_caps {
-            compatible = "zmk,behavior-tap-dance";
-            label = "SHIFT_TO_CAPS";
-            #binding-cells = <0>;
-            bindings = <&kp LEFT_SHIFT>, <&kp CAPS>;
-        };
-
-        Space_to_backspace: Space_to_backspace {
-            compatible = "zmk,behavior-tap-dance";
-            label = "SPACE_TO_BACKSPACE";
-            #binding-cells = <0>;
-            bindings = <&kp SPACE>, <&kp BACKSPACE>;
         };
     };
 
@@ -55,7 +34,7 @@
 &mt GLOBE TAB     &kp Q         &kp W         &kp E                   &kp R         &kp T   &kp Y         &kp U            &kp I                &kp O         &kp P          &kp EQUAL
 &lt 1 ESCAPE      &kp A         &kp S         &kp D                   &kp F         &kp G   &kp H         &kp J            &kp K                &kp L         &kp SEMICOLON  &kp SQT
 &kp LSHIFT        &kp Z         &kp X         &kp C                   &kp V         &kp B   &kp N         &kp M            &kp COMMA            &kp PERIOD    &kp SLASH      &kp RSHFT
-&kp LEFT_CONTROL  &kp LEFT_ALT  &Lower_Layer  &mt LEFT_GUI BACKSPACE  &kp SPACE             &kp K_MUTE    &mt ENTER SPACE  &mt RIGHT_GUI ENTER  &Lower_Layer  &kp BACKSPACE  &top_layer
+&kp LEFT_CONTROL  &kp LEFT_ALT  &Lower_Layer  &mt LEFT_GUI BACKSPACE  &lt 1 SPACE           &kp K_MUTE    &mt ENTER SPACE  &mt RIGHT_GUI ENTER  &Lower_Layer  &kp BACKSPACE  &kp DEL
             >;
 
             sensor-bindings = <&inc_dec_kp RIGHT LEFT_ARROW>;
@@ -63,11 +42,11 @@
 
         lower_layer {
             bindings = <
-&trans    &kp F1  &kp F2  &kp F3                  &kp F4         &kp F5  &kp F6  &kp F7     &kp F8            &kp F9             &kp F10        &kp F11
-&trans    &trans  &trans  &trans                  &trans         &trans  &trans  &trans     &kp UP_ARROW      &trans             &trans         &kp F12
-&trans    &trans  &trans  &trans                  &trans         &trans  &trans  &kp LEFT   &kp DOWN_ARROW    &kp RIGHT          &trans         &trans
-&kp CAPS  &trans  &trans  &kp C_AL_CONTROL_PANEL  &trans         &trans  &trans  &trans     &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSLASH  &trans
-&trans    &trans  &trans  &trans                  &kp BACKSPACE          &tog 3  &kp ENTER  &trans            &trans             &kp DELETE     &trans
+&trans    &kp F1  &kp F2  &kp F3  &kp F4         &kp F5  &kp F6  &kp F7     &kp F8            &kp F9             &kp F10               &kp F11
+&trans    &trans  &trans  &trans  &trans         &trans  &trans  &trans     &kp UP_ARROW      &trans             &trans                &kp F12
+&trans    &trans  &trans  &trans  &trans         &trans  &trans  &kp LEFT   &kp DOWN_ARROW    &kp RIGHT          &kp LS(LEFT_BRACKET)  &kp LS(RIGHT_BRACE)
+&kp CAPS  &trans  &trans  &trans  &trans         &trans  &trans  &trans     &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSLASH         &trans
+&trans    &trans  &trans  &trans  &kp BACKSPACE          &tog 3  &kp ENTER  &trans            &trans             &kp DELETE            &mo 2
             >;
 
             sensor-bindings = <&inc_dec_kp UP_ARROW DOWN_ARROW>;
