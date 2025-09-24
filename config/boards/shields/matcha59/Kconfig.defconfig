@@ -2,7 +2,7 @@ if SHIELD_MATCHA59
 
 config ZMK_KEYBOARD_NAME
     string "Keyboard Name"
-    default "screenmatcha59"
+    default "matcha59"
 
 if ZMK_DISPLAY
 
