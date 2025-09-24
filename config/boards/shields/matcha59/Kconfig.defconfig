@@ -4,9 +4,6 @@ config ZMK_KEYBOARD_NAME
     string "Keyboard Name"
     default "matcha59"
 
-endif
-
-
 if ZMK_DISPLAY
 
 config I2C
@@ -34,3 +31,5 @@ choice LV_COLOR_DEPTH
 endchoice
 
 endif # LVGL
+
+endif
