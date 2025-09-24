@@ -2,6 +2,7 @@
 
 / {
   chosen {
+    zephyr,display = &oled;
     zmk,kscan = &default_kscan;
     zmk,matrix_transform = &default_transform;  
   };
@@ -62,3 +63,12 @@
     };
 };
 
+&i2c0 {
+    ssd1306: ssd1306@3c {
+        compatible = "solomon,ssd1306fb";
+        reg = <0x3c>;
+        label = "SSD1306";
+        width = <128>;
+        height = <64>;
+    };
+};
