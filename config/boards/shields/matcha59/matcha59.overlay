@@ -64,6 +64,8 @@
 };
 
 &i2c0 {
+    status = "okay";
+
     oled: ssd1306@3c {
         compatible = "solomon,ssd1306fb";
         reg = <0x3c>;
@@ -71,8 +73,8 @@
         height = <32>;
         segment-offset = <0>;
         display-offset = <0>;
+
         page-offset = <0>; 
-        status = "okay";
         multiplex-ratio = <31>;
         segment-remap;
         com-invdir;
